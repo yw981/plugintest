@@ -5,7 +5,20 @@
     android:paddingTop="@dimen/activity_vertical_margin"
     android:paddingBottom="@dimen/activity_vertical_margin" tools:context=".MainActivity">
 
-    <TextView android:text="@string/hello_world" android:layout_width="wrap_content"
+    <TextView
+        android:id="@+id/tv"
+        android:text="原理，在TextView的onTouch事件里，取到点击的座标，再根据y座标，找出第几行，再根据行号，找出该行显示的字符串，然后根据x座标，计算点击处的字符。如果处理中文，找到即可，找英文单词的话，在该字符前后查找，看其是否属于同一个单词。
+根据x座标行内查找这里，应该有更快的算法，因为我用的的最笨的方法，希望得到高人指点。
+textView.setOnTouchListener(new OnTouchListener() {
+      @Override
+      public boolean onTouch(View v, MotionEvent event) {
+        // TODO 自动生成的方法存根
+        switch(event.getAction())
+        {
+        case MotionEvent.ACTION_DOWN:
+          float x=event.getX();
+          float y=event.getY();string hello_world"
+        android:layout_width="wrap_content"
         android:layout_height="wrap_content" />
 
 </RelativeLayout>
